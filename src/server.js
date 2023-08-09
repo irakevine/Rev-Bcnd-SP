@@ -14,6 +14,19 @@ app.get('/', (req, res) => {
 // CREATE EXPRESS SERVER
 const server = app.listen(PORT);
 
+
+const dbCon = async () => {
+  try {
+    await db.sequelize.authenticate();
+  } catch (error) {
+    console.log(`db error: ${error.message}`);
+  }
+};
+
+Promise.all([dbCon(), server]).then(() => {
+  console.log(`Server listening on port:${PORT}`);
+  console.log('DB connection successful');
+});
 app.listen(PORT, () => {
   console.log(`server listening on port ${PORT}`)
 })
