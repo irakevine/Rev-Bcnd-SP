@@ -4,9 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "start": "npm run build && node build/index.js",
+    "dev": "npm run babel && nodemon --exec babel-node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src/index.js -d dist --presets @babel/preset-modules",
+    "build": "rm -rf build && babel src -d build --presets @babel/preset-env"
+
   },
   "author": "",
   "license": "ISC",
