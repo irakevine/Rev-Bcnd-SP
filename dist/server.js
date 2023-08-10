@@ -1,9 +1,13 @@
-import { Sequelize } from "sequelize";
-import dotenv from 'dotenv';
 import express from 'express';
+import cors from 'cors';
+import 'dotenv/config';
 import db from '../database/models/index.js';
-dotenv.config();
 const app = express();
+dotenv.config();
+app.use(cors({
+  origin: '*'
+}));
+app.set('view engine', 'ejs');
 console.log('hell');
 const {
   DB_NAME,
