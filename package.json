@@ -14,7 +14,7 @@
     "seed-file": "npx sequelize-cli seed:generate --name demo-user",
     "seed-all": "npx sequelize-cli db:seed:all",
     "undo-seed": "npx sequelize-cli db:seed:undo",
-    "undo-seed-all": ""
+    "undo-seed-all": "npx sequelize-cli db:seed:undo:all"
   },
   "author": "",
   "license": "ISC",
