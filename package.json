@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel src/server.js -d dist --presets @babel/preset-modules",
     "build": "rm -rf build && babel src -d build --presets @babel/preset-env",
-    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:up": "npx sequelize-cli db:migrate",
     "undo-migrate": "npx sequelize-cli db:migrate:undo",
     "seed-file": "npx sequelize-cli seed:generate --name demo-user",
     "seed-all": "npx sequelize-cli db:seed:all",
